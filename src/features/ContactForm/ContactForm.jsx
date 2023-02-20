@@ -1,4 +1,3 @@
-import { nanoid } from 'nanoid';
 import { useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact, selectContacts } from '../Contacts/contactsSlice';
@@ -21,7 +20,6 @@ const ContactForm = () => {
     const contactNumber = inputNumberRef.current.value;
 
     const newContact = {
-      id: nanoid(),
       name: contactName,
       number: contactNumber,
     };

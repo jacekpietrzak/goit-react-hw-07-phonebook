@@ -7,7 +7,6 @@ import Contact from '../Contact/Contact';
 
 const ContactList = () => {
   const contacts = useSelector(selectContacts);
-
   const filter = useSelector(selectFilter);
   const filterStatus = filter.status;
   const filteredContacts = contacts.filter(contact =>
