@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { useRef } from 'react';
-import { setStatusFilter } from './filterSlice';
+import { setStatusFilter } from '../../redux/filterSlice';
 
 import css from './Filter.module.css';
 

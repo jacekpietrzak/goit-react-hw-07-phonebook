@@ -5,14 +5,14 @@ import {
   selectContacts,
   selectIsLoading,
   selectError,
-} from '../Contacts/contactsSlice';
+} from '../redux/contactsSlice';
 
-import ContactForm from '../ContactForm/ContactForm';
-import Filter from '../Filter/Filter';
-import ContactList from '../ContactList/ContactList';
-import css from './Contacts.module.css';
+import ContactForm from './ContactForm/ContactForm';
+import Filter from './Filter/Filter';
+import ContactList from './ContactList/ContactList';
+import css from './App.module.css';
 
-export function Contacts() {
+function App() {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
   const isLoading = useSelector(selectIsLoading);
@@ -23,7 +23,7 @@ export function Contacts() {
   }, [dispatch]);
 
   return (
-    <>
+    <div className={css.App}>
       <h1 className={css.h1}>Phonebook</h1>
       <ContactForm />
       <h2 className={css.h2}>Contacts</h2>
@@ -32,6 +32,8 @@ export function Contacts() {
       {error && <div>{error}</div>}
       {contacts.length === 0 && !isLoading && <div>No contacts to show</div>}
       {contacts.length > 0 && <ContactList />}
-    </>
+    </div>
   );
 }
+
+export default App;

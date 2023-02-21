@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact, selectContacts } from '../Contacts/contactsSlice';
+import { addContact, selectContacts } from '../../redux/contactsSlice';
 
 import css from './ContactForm.module.css';
 
@@ -21,7 +21,7 @@ const ContactForm = () => {
 
     const newContact = {
       name: contactName,
-      number: contactNumber,
+      phone: contactNumber,
     };
 
     const checkName = contacts.find(
